@@ -1,28 +1,43 @@
-<% if user_signed_in? %>
- 
-  <%= link_to 'Edit profile', edit_user_registration_path %>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>        
- 
-<% else %>
- 
-  <%= link_to 'Sign In', new_user_registration_path  %>
-  <%= link_to 'Login', new_user_session_path  %>  
- 
-<% end %>
+<div class="container-fluid" id="section1">
+  <nav class="navbar navbar-inverse navbar-fixed-top " id="nav">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">revamp</a>
+      </div>
+      <ul class="nav navbar-nav pull-right" >
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><%= link_to 'Categories', categories_path  %></li>
+        <li><%= link_to 'Sites', sites_path  %>></li>
+        <% if admin_signed_in? %>
 
-<% if admin_signed_in? %>
- 
-  <%= link_to 'Edit profile', edit_admin_registration_path %>
-  <%= link_to 'Logout', destroy_admin_session_path, :method => :delete %>        
- 
-<% else %>
- 
-  <%= link_to 'Sign In', new_admin_registration_path  %>
-  <%= link_to 'Login', new_admin_session_path  %>  
- 
-<% end %>
+          <li><%= link_to 'Edit profile', edit_admin_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_admin_session_path, :method => :delete %></li>       
 
-<%= link_to 'Categories', categories_path  %> 
+        <% else %>
 
-<%= link_to 'Sites', sites_path  %> 
+          <li><%= link_to 'Sign In', new_admin_registration_path %></li>
+          <li><%= link_to 'Login', new_admin_session_path  %></li>
+
+        <% end %>
+        
+        <% if user_signed_in? %>
+
+          <li><%= link_to 'Edit Admin profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Logout Admin ', destroy_user_session_path, :method => :delete %></li>        
+
+        <% else %>
+
+          <li><%= link_to 'Sign In Admin ', new_user_registration_path  %></li>
+          <li><%= link_to 'Login Admin ', new_user_session_path  %></li>  
+
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="flex-container" id="heading">
+  <p>REVAMP</p>
+</div>
 

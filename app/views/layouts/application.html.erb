@@ -7,27 +7,60 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <br>
-
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Revamp</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Categories</a></li>
-      <li><a href="#">Sites</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top " id="nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">REVAMP</a>
+        </div>
+        <ul class="nav navbar-nav pull-right" >
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><%= link_to 'Categories', categories_path  %></li>
+          <li><%= link_to 'Sites', sites_path  %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if user_signed_in? %>
+
+                <li><%= link_to 'Edit Admin profile', edit_user_registration_path %></li>
+                <li><%= link_to 'Logout Admin ', destroy_user_session_path, :method => :delete %></li>        
+
+              <% else %>
+
+                <li><%= link_to 'Sign In Admin ', new_user_registration_path  %></li>
+                <li><%= link_to 'Login Admin ', new_user_session_path  %></li>  
+
+              <% end %>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if admin_signed_in? %>
+
+                <li><%= link_to 'Edit profile', edit_admin_registration_path %></li>
+                <li><%= link_to 'Logout', destroy_admin_session_path, :method => :delete %></li>       
+
+              <% else %>
+
+                <li><%= link_to 'Sign In', new_admin_registration_path %></li>
+                <li><%= link_to 'Login', new_admin_session_path  %></li>
+
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
     
 

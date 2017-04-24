@@ -1,0 +1,14 @@
+<div class="container-fluid">
+	<h1>Categories</h1>
+
+	<% if @categories.any? %>
+		<ul>
+			<% @categories.each do |category|%>
+				<li><%= category.category_name %></li>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>There are no categories yet!</p>
+	<% end %>
+	<%= link_to('Add Category', new_category_path)  %> 
+</div>

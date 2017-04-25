@@ -1,0 +1,7 @@
+<div class="container-fluid">
+	<h2><%= @blogpost.blog_title %></h2>
+	<p><%= @blogpost.body %></p>
+
+		<p><%= link_to "Edit Blog Post", edit_blogpost_path %> | <%= link_to "Delete Blog Post", blogpost_path(@blogpost), :data => { :confirm => "Are you sure you want to delete this Blog Post?", :method => "delete" } %></p>
+	<hr>
+</div>

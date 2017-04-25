@@ -3,7 +3,6 @@ class CreateSites < ActiveRecord::Migration[5.0]
     create_table :sites do |t|
       t.string :site_name
       t.string :description
-      t.references :category, foreign_key: true
 
       t.timestamps
     end

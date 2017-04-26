@@ -4,7 +4,7 @@
 	<% if @sites.any? %>
 		<ul>
 			<% @sites.each do |site|%>
-				<li><%= site.site_name %></li>
+				<li><%= link_to site.site_name, site_path(site) %></li>
 			<% end %>
 		</ul>
 	<% else %>

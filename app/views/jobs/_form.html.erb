@@ -1,0 +1,33 @@
+<%= render "layouts/errors", :object => @job %>
+
+<%= form_for @job do |f| %>
+	<div class="form-group">
+		<%= f.label :job_title %>	
+		<%= f.text_field :job_title %>
+	</div>
+	<div class="form-group">
+		<%= f.label :company_name %>	
+		<%= f.text_field :company_name %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label :description %>	
+	</div>
+	<div class="form-group">
+		<%= f.text_area :description, size: "60x12" %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label :requirement %>	
+	</div>
+	<div class="form-group">
+		<%= f.text_area :requirement, size: "60x12" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :email %>	
+		<%= f.text_field :email %>
+	</div>
+
+	<%= f.submit %>
+<% end %>

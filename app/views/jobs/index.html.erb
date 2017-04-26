@@ -1,0 +1,15 @@
+<div class="container-fluid">
+	<h2>Jobs</h2>
+	<hr>
+	<% if @jobs.any? %>
+		<ul>
+			<% @jobs.each do |job| %>
+				<li><%= link_to job.job_title, job_path(job), class: "job-header" %> <br>
+				<%= truncate(job.description, :length => 100) %><%= link_to "Read more", job_path(job) %></li> <hr>
+			<% end %>
+		</ul>	
+	<% else %>
+		<p>Under maintenance</p>
+	<% end %>
+	<%= link_to "Add A Job", new_job_path %>
+</div>

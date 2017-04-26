@@ -1,5 +1,5 @@
 class Site < ApplicationRecord
-  belongs_to :category
-  validates :site_name, :presence => true
-  validates :description, :presence => true
+  acts_as_taggable
+  validates :site_name,		:presence => true
+  validates :description,	:presence => true
 end

@@ -21,13 +21,11 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :categories do
-    resources :sites
-  end
-
   resources :sites
 
-  # resources :sites
+  resources :blogposts
+
+  get 'tags/:tag', to: 'sites#index', as: :tag
 
   resources :contacts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

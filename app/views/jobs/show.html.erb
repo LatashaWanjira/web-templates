@@ -1,0 +1,12 @@
+<div class="container-fluid">
+	<h2><%= @job.job_title %></h2>
+	<h4>By: <%= @job.company_name %></h4>
+	<hr>
+	<h3>Description</h3>
+	<p><%= @job.description %></p>
+	<h3>Requirements</h3>
+	<p><%= @job.requirement %></p>
+	<p>Send your CVs to <%= @job.email %></p>
+
+	<p><%= link_to "Edit Job Post", edit_job_path %> | <%= link_to "Delete Job Post", job_path(@job), :data => { :confirm => "Are you sure you want to delete this Job Post?", :method => "delete" } %></p>
+</div>

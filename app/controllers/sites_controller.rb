@@ -41,6 +41,6 @@ class SitesController < ApplicationController
 
   private
   def site_params
-    params.require(:site).permit(:site_name, :description, :tag_list)
+    params.require(:site).permit(:site_name, :description, :tag_list, :images [])
   end
 end

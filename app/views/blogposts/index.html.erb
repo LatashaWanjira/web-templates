@@ -8,13 +8,13 @@
 		<ul>
 			<% @blogposts.each do |blogpost| %>
 				<li><%= link_to blogpost.blog_title, blogpost_path(blogpost), class: "blogposts-header" %> <br>
-				<%= truncate(blogpost.body, :length => 100) %><%= link_to "Read more", blogpost_path(blogpost) %></li> <hr>
+				<%= truncate(blogpost.body, :length => 100) %><%= link_to " Read more", blogpost_path(blogpost) %></li> <hr>
 			<% end %>
 		</ul>	
 	<% else %>
 		<center><p>No blog has been added yet</p></center>
 	<% end %>
-  <br> <hr>
+  <br>
 	<%= link_to "Add A Blogpost", new_blogpost_path %>
 </div>
 </div>

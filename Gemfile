@@ -62,4 +62,4 @@ gem 'devise'
 
 gem 'acts-as-taggable-on'
 
-# ruby "2.2.3"
+ruby "2.2.3"

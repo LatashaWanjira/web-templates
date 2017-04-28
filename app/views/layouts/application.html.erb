@@ -4,14 +4,13 @@
     <title>Revamp</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <hr width="1" size="500">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -19,9 +18,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">REVAMP</a>
+          <%#<a class="navbar-brand" href="/">REVAMP</a>%>
         </div>
-        <ul class="nav navbar-nav pull-right" >
+        <ul class="nav navbar-nav navbar-justify " >
           <li class="active"><a href="/">Home</a></li>
           <li><%= link_to 'Sites', sites_path  %></li>
           <li><%= link_to 'Blogs', blogposts_path  %></li>

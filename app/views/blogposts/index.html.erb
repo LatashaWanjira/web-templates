@@ -1,6 +1,9 @@
-<div class="container-fluid blogposts">
-	<h2>Blog Posts</h2>
+<div class="container">
+<div class="blog_head">
+	<h2>How - To Blogs</h2>
+</div>
 	<hr>
+<div class="blog_body">
 	<% if @blogposts.any? %>
 		<ul>
 			<% @blogposts.each do |blogpost| %>
@@ -9,7 +12,9 @@
 			<% end %>
 		</ul>	
 	<% else %>
-		<p>Under maintenance</p>
+		<center><p>No blog has been added yet</p></center>
 	<% end %>
+  <br> <hr>
 	<%= link_to "Add A Blogpost", new_blogpost_path %>
+</div>
 </div>

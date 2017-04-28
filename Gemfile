@@ -62,4 +62,6 @@ gem 'devise'
 
 gem 'acts-as-taggable-on'
 
+gem 'carrierwave', '~> 1.0'
+
 ruby "2.2.3"

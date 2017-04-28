@@ -1,6 +1,9 @@
 <div class="container-fluid">
 	<h2><%= @site.site_name %></h2>
 	<p><%= @site.description %></p>
+	<% @site.images.each do |image| %>
+	  <%= image_tag image.url.to_s %>
+	<% end %>
 	<hr>
 	<p>Tags: <%= raw(@site.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
 	<hr>

@@ -1,6 +1,9 @@
-<div class="container-fluid">
+<div class="container">
+<div class="jobs_head">
 	<h2>Jobs</h2>
-	<hr>
+</div>
+<hr>
+<div class="jobs_body">
 	<% if @jobs.any? %>
 		<ul>
 			<% @jobs.each do |job| %>
@@ -9,7 +12,9 @@
 			<% end %>
 		</ul>	
 	<% else %>
-		<p>Under maintenance</p>
-	<% end %>
+		<center><p>No jobs have been advertised yet</p></center>
+	<% end %> <br>
+<hr>
 	<%= link_to "Add A Job", new_job_path %>
+</div>
 </div>

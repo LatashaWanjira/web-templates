@@ -1,7 +1,11 @@
-<div class="container-fluid">
+<div class="container">
+<div class="sites_head">
 	<h1>Sites</h1>
+</div>
 	<hr>
+<div class="sites_body">
 	<% if @sites.any? %>
+	<p>Uploaded websites:
 		<ul>
 			<% @sites.each do |site|%>
 				<li><%= link_to site.site_name, site_path(site) %></li>
@@ -9,7 +13,7 @@
 		</ul>
 	<% else %>
 		<p>There are no sites yet!</p>
-	<% end %>
+	<% end %> <br>
 	<%= link_to "Add New Site", new_site_path %>
 	<hr>
 	<div id='tag_cloud'>
@@ -17,4 +21,5 @@
 	    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
 	  <% end %>
 	</div>
+</div>
 </div>

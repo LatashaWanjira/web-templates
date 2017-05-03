@@ -1,3 +1,5 @@
+<% content_for(:title, "Job Board | ReVamp") %>
+
 <div class="container-fluid">
 	<h2>Jobs</h2>
 	<hr>
@@ -11,5 +13,7 @@
 	<% else %>
 		<p>Under maintenance</p>
 	<% end %>
-	<%= link_to "Add A Job", new_job_path %>
+	<% if admin_signed_in? %>
+		<%= link_to "Add A Job", new_job_path %>
+	<% end %>
 </div>

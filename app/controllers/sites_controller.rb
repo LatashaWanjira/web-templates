@@ -1,4 +1,8 @@
 class SitesController < ApplicationController
+
+  # before_action :authenticate_admin!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
+
   def index
     @sites = Site.all
   end
@@ -8,11 +12,11 @@ class SitesController < ApplicationController
   end
 
   def new
-    @site = Site.new
+    @site = current_user.sites.new
   end
 
   def create
-    @site = Site.new(site_params)
+    @site = current_user.sites.new(site_params)
     if @site.save
       redirect_to sites_path
     else
@@ -41,6 +45,6 @@ class SitesController < ApplicationController
 
   private
   def site_params
-    params.require(:site).permit(:site_name, :description, :tag_list, :images [])
+    params.require(:site).permit(:site_name, :description, :tag_list, {images: []}, {images_cache: []})
   end
 end

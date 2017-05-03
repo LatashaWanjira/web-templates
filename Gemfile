@@ -64,4 +64,8 @@ gem 'acts-as-taggable-on'
 
 gem 'carrierwave', '~> 1.0'
 
+gem "omniauth-github"
+
+gem 'mini_magick'
+
 ruby "2.2.3"

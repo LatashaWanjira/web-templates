@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @site %>
 
-<%= form_for @site do |f| %>
+<%= form_for @site, html: { multipart: true } do |f| %>
 	<div class="form-group">
 		<%= f.label :site_name %>
 		<%= f.text_field :site_name %>
@@ -16,6 +16,14 @@
 	<div class='form-group'>
     	<%= f.label :images %>
 		<%= f.file_field :images, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+		<%= f.hidden_field :images_cache %>
+		
+		<% if @site.images?%>
+			<% @site.images.each do |image| %>
+		 		<%= image_tag image.url.to_s %>
+			<% end %>
+		<% end %>
+
 	</div>
 	<%= f.submit %>
 <% end %>

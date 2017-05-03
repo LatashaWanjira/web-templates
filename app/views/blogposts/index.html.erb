@@ -1,3 +1,5 @@
+<% content_for(:title, "Blog Posts | ReVamp") %>
+
 <div class="container-fluid blogposts">
 	<h2>Blog Posts</h2>
 	<hr>
@@ -11,5 +13,7 @@
 	<% else %>
 		<p>Under maintenance</p>
 	<% end %>
-	<%= link_to "Add A Blogpost", new_blogpost_path %>
+	<% if user_signed_in? %>
+		<%= link_to "Add A Blogpost", new_blogpost_path %>
+	<% end %>
 </div>

@@ -5,12 +5,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 100px;
+    
 }
 
 img {
-    height: 70px;
-    width: 80px;
-    margin-top: 0.2%;
+    height: 100px;
+    width: 200px;
     margin-bottom: 10%;
 }
 
@@ -24,15 +24,190 @@ img {
     line-height: 10px;
 }
 
-#heading {
+.logo {
     font-family: sans-serif;
     font-size: 3em;
     color: aqua;
     text-align: center;
-    margin-top: 16%;
+    margin-top: 5%;
     border-style: solid;
     border-width: 10%;
     width: 400px;
-    height: 70px;
-    margin-left: 35%
+    height: 150px;
+    margin-left: 35%;
 }
+
+.slogan {
+    color: aqua;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+hr {
+    color: white;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.motto {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+#head {
+    color: aqua;
+    font-size: 35px;
+}
+
+.why {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#about {
+    color: aqua;
+}
+
+#us {
+    color: aqua;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#agnes {
+    height: 17%;
+    width: 17%;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+#kenn {
+    height: 20%;
+    width: 20%;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+#tasha {
+    height: 20%;
+    width: 20%;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+#ruth {
+    height: 20%;
+    width: 20%;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+.carousel-inner > .item > img {
+     width: 1390px;
+     height: 800px;
+}
+
+
+
+.icons {
+    column-count: 3;
+    background: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.icon1, .icon2, .icon3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+        
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: serif;
+}
+
+.row {
+   max-width: 103%;
+   margin: 6px;
+}
+
+#logo {
+   width: 10%;
+   margin-left: 40px;
+   margin-top: -90px;
+}
+header {
+   background-image:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+   background-image: url(landingpage3.jpg);
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   height: 100vh;
+}
+
+.landingHeader {
+   width: 1000px;
+   color: whitesmoke;
+   position: absolute;
+   top: 15%;
+   left: 9%;
+}
+
+.landingHeader h1 {
+   text-align: center;
+   padding: 5px;
+   line-height: 50px;
+   font-size: 50px;
+   font-weight: bold;
+   margin-bottom: 40%;
+}
+
+.mainNav {
+   list-style: none;
+   float: right;
+   margin-top: -100px;
+   margin-right: 20px;
+}
+
+.mainNav li{
+   display: inline-block;
+   font-size: 15px;
+   padding: 20px;
+   margin-left: 30px;
+}
+
+.mainNav li a {
+   color: whitesmoke;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.mainNav li a:hover {
+   color: aqua;
+   border-bottom: 2px solid aqua;
+   transition: all 0.5s ease-in;
+   padding: 10px 0;  
+}
+
+.btn {
+   border: 1px solid aqua;
+   padding: 20px;
+   margin-left: 45%;
+   text-decoration: none;
+   font-size: 33px;
+}
+.btn-site {
+   color: white;
+   background-color: aqua;
+}
+
+.btn-site:hover {
+   transition: all 0.5s ease-in;
+   background-color: white;
+   color: aqua;
+}
+

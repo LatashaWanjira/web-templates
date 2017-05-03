@@ -1,19 +1,22 @@
 <% content_for(:title, "Job Board | ReVamp") %>
 
-<div class="container-fluid">
-	<h2>Jobs</h2>
-	<hr>
-	<% if @jobs.any? %>
-		<ul>
-			<% @jobs.each do |job| %>
-				<li><%= link_to job.job_title, job_path(job), class: "job-header" %> <br>
-				<%= truncate(job.description, :length => 100) %><%= link_to "Read more", job_path(job) %></li> <hr>
-			<% end %>
-		</ul>	
-	<% else %>
-		<p>Under maintenance</p>
-	<% end %>
-	<% if admin_signed_in? %>
-		<%= link_to "Add A Job", new_job_path %>
-	<% end %>
+<div class="container">
+  <div class="jobs_head">
+    <h2>Jobs</h2>
+  </div>
+  <hr>
+  <div class="jobs_body">
+    <% if @jobs.any? %>
+      <ul>
+        <% @jobs.each do |job| %>
+          <li><%= link_to job.job_title, job_path(job), class: "job-header" %> <br>
+          <%= truncate(job.description, :length => 100) %><%= link_to "Read more", job_path(job) %></li> <hr>
+        <% end %>
+      </ul>	
+    <% else %>
+      <center><p>No jobs have been advertised yet</p></center>
+    <% end %> <br>
+  <hr>
+    <%= link_to "Add A Job", new_job_path %>
+  </div>
 </div>

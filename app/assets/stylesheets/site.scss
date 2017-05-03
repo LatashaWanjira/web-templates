@@ -1,3 +1,20 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sites_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sites_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.jumbotron {
+    height: 250px;
+
+}

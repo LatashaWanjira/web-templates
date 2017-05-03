@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+#nav {
+    opacity: 0.75;
+}
+
+.sign_up_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sign_up_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.log_in_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.log_in_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.password_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.password_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.contacts_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.contacts_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.edit_user_head {
+    color: aqua;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.edit_user_body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+form {
+    color: black;
+}
+
+label, em {
+    color: white;
+}
+
+@media (min-width: 768px){
+  .navbar-nav{
+     margin: 0 auto;
+     display: table;
+     table-layout: fixed;
+     float: none;
+  }
+}  

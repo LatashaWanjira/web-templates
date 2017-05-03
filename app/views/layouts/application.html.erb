@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Revamp</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -13,27 +13,34 @@
     
   <body>
 
-  <div class="row">
-         <div id="logo">
-           <a href="index.html"><img src="logos.png"></a>
-         </div>
-               
-       <ul class="mainNav">
-         <li class="active"><a href="/">Home</a></li>
-          <li><%= link_to 'Sites', sites_path  %></li>
-          <li><%= link_to 'Blogs', blogposts_path  %></li>
-          <li><%= link_to 'Jobs', jobs_path  %></li>
-          <li><%= link_to 'Contacts', contacts_path  %></li>    
-       </ul>
+    <div class="row">
+    <div id="logo">
+    <a href="index.html"><img src="logos.png"></a>
+    </div>
 
-        
-     </div>    
+    <ul class="mainNav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><%= link_to 'Sites', sites_path  %></li>
+      <li><%= link_to 'Blogs', blogposts_path  %></li>
+      <li><%= link_to 'Jobs', jobs_path  %></li>
+      <li><%= link_to 'Contacts', contacts_path  %></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Logout ', destroy_user_session_path, :method => :delete %></li>        
+          <% else %>
+            <li><%= link_to "Sign in with Github", user_github_omniauth_authorize_path %></li>
+            <li><%= link_to 'Sign Up ', new_user_registration_path  %></li>
+            <li><%= link_to 'Login ', new_user_session_path  %></li>  
+        <% end %>
+        </ul>
+       </li>
+      </ul>
+    </div>    
      
-  
     <%= yield %>
-
-    
-    
 
   </body>
   

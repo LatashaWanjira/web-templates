@@ -8,7 +8,13 @@
 	<p>Uploaded websites:
 		<ul>
 			<% @sites.each do |site|%>
-				<li><%= link_to site.site_name, site_path(site) %></li>
+			<div class="container">
+  <div class="jumbotron">
+    <li><%= link_to site.site_name, site_path(site) %></li>     
+  </div>
+
+</div
+				
 			<% end %>
 		</ul>
 	<% else %>

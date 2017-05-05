@@ -1,15 +1,34 @@
 // Place all the styles related to the blogposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.blog_head {
-    color: aqua;
+.blog-head {
+    color: #3FE0FF;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
 }
 
-.blog_body {
-    color: white;
+.blog-body-truncated {
+    color: black;
     font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    word-wrap: break-word;
+    margin: 3%;
+    padding: 3%;
+}
+
+.blog-body-truncated li {
+    list-style: none;
+}
+
+.blog-title {
+    text-transform: uppercase;
+}
+
+.blog-body {
+    padding: 50px;
+    text-align: center;
+    background-color: white;
     font-size: 20px;
 }

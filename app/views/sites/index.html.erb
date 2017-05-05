@@ -1,26 +1,27 @@
 <% content_for(:title, "Revamped Sites | ReVamp") %>
 
 <div class="container">
-  <div class="sites_head">
+  <div class="sites-head">
     <h1>Sites</h1>
   </div>
   <hr>
-  <div class="sites_body">
+  <div class="sites-body">
     <% if @sites.any? %>
-      <p>Uploaded websites:
       <ul>
+          <div class="row">
         <% @sites.each do |site|%>
-          <div class="container">
-            <div class="jumbotron">
+            <div class="col-md-3 site-index" style="background-image: linear-gradient(rgba(63, 224, 255, 0.3), rgba(63, 224, 255, 0.3)), url(<%= site.images[0] %>);
+            background-size: cover;"> 
               <li><%= link_to site.site_name, site_path(site) %></li>     
             </div>
-        </div>
         <% end %>
+            </div>
       </ul>
     <% else %>
       <p>There are no sites yet!</p>
-    <% end %> <br>
-    <%= link_to "Add New Site", new_site_path %>
+    <% end %>
+  </div>
+  <%= link_to "Add New Site", new_site_path %>
   <hr>
   <div id='tag_cloud'>
     <% tag_cloud Site.tag_counts, %w{s m l} do |tag, css_class| %>

@@ -3,45 +3,77 @@
   <head>
     <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Montserrat|Rubik|Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
     
   <body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">ReVamp</a>
 
-    <div class="row">
-    <div id="logo">
-    <a href="index.html"><img src="logos.png"></a>
-    </div>
+			</div>
 
-    <ul class="mainNav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><%= link_to 'Sites', sites_path  %></li>
-      <li><%= link_to 'Blogs', blogposts_path  %></li>
-      <li><%= link_to 'Jobs', jobs_path  %></li>
-      <li><%= link_to 'Contacts', contacts_path  %></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-            <li><%= link_to 'Logout ', destroy_user_session_path, :method => :delete %></li>        
-          <% else %>
-            <li><%= link_to "Sign in with Github", user_github_omniauth_authorize_path %></li>
-            <li><%= link_to 'Sign Up ', new_user_registration_path  %></li>
-            <li><%= link_to 'Login ', new_user_session_path  %></li>  
-        <% end %>
-        </ul>
-       </li>
-      </ul>
-    </div>    
-     
-    <%= yield %>
-
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><%= link_to 'Home', root_path  %></li>
+					<li><%= link_to 'Sites', sites_path  %></li>
+					<li><%= link_to 'Blogs', blogposts_path  %></li>
+					<li><a href="#contacts-body">Contacts</a></li>					
+					<li class="dropdown">
+						<% if user_signed_in? %>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+								<li><%= link_to 'Logout ', destroy_user_session_path, :method => :delete %></li> 
+							</ul>   
+						<% else %>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Join The Community<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><%= link_to "Sign in with Github", user_github_omniauth_authorize_path %></li>
+								<li><%= link_to 'Sign Up ', new_user_registration_path  %></li>
+								<li><%= link_to 'Login ', new_user_session_path  %></li>  
+							</ul>
+						<% end %>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>  
+	<div class="content">
+		<%= yield %>
+	</div>
+	<div id="contacts-body">
+		<div class="container">
+		<div class="contacts-head">
+		<h2>Contact Us</h2>
+		</div>
+		<hr>
+			<p><span class="glyphicon glyphicon-envelope"></span> EMAIL: revamp@gmail.com</p>
+			<p><span class="ion-android-call"></span> CALL: +254 732 716 187</p>
+		<a href="http://twitter.com/" class="icon-button twitter"><i class="ion-social-twitter"></i><span></span></a>
+		<a href="http://facebook.com" class="icon-button facebook"><i class="ion-social-facebook"></i><span></span></a>
+		<a href="http://plus.google.com" class="icon-button google-plus"><i class="ion-social-googleplus"></i><span></span></a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<h5> &#169 ReVamp <%= Time.current.year %></h5>
+		</div>
+	</div>	
   </body>
   
 </html>

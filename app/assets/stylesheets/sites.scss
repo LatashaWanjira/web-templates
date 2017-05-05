@@ -1,3 +1,45 @@
 // Place all the styles related to the sites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.site-index {
+    padding: 100px;
+    margin-left: 5%;
+    margin-top: 50px;
+}
+
+.site-index:hover {
+    background-color: #3FE0FF;
+}
+
+.sites-head {
+    color: #3FE0FF;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sites-body {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+}
+
+.sites-body li {
+    font-size: 40px;
+    list-style: none;
+}
+
+.sites-body a {
+    color: black;
+    text-transform: uppercase;
+}
+
+.sites-body a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.site-screenshots {
+    height: 500px;
+    object-fit: contain;
+    width: 100%;
+}

@@ -1,112 +1,151 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-    background-repeat: no-repeat;
+.item {
+    padding: 270px;
+}
+
+.carousel-image-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/image1.jpg");
+}
+
+.carousel-image-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/image2.jpg");
+}
+
+.carousel-image-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/image3.jpg");
+}
+
+.carousel-image-1,
+.carousel-image-2,
+.carousel-image-3 {
     background-size: cover;
-    padding-top: 100px;
-    
 }
 
-img {
-    height: 100px;
-    width: 200px;
-    margin-bottom: 10%;
-}
-
-.navbar-inverse .navbar-nav > li {
-    padding: 20px;
-    line-height: 10px;
-}
-
-.navbar-inverse .navbar-brand {
-    padding: 20px;
-    line-height: 10px;
-}
-
-.logo {
-    font-family: sans-serif;
-    font-size: 3em;
-    color: aqua;
+.landing-header {
+    position: absolute;
+    z-index: 1;
     text-align: center;
-    margin-top: 5%;
-    border-style: solid;
-    border-width: 10%;
-    width: 400px;
-    height: 150px;
-    margin-left: 35%;
-}
-
-.slogan {
-    color: aqua;
-    font-family: 'Open Sans Condensed', sans-serif;
-}
-
-hr {
+    left: 27%;
+    top: 120px;
     color: white;
-    margin-left: 60px;
-    margin-right: 60px;
+    padding: 25px;
+    margin: 20px;
 }
 
-.motto {
+.landing-page-button {
+    border: 1px solid #3FE0FF;
+    padding: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: #3FE0FF;
+}
+
+.landing-page-button a,
+.glyphicon-menu-down {
     color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
-
+    font-size: 20px;
+    font-weight: bold;
 }
 
-#head {
-    color: aqua;
-    font-size: 35px;
+.landing-page-button a:hover {
+    color: #3FE0FF;
+    text-decoration: none;
 }
 
-.why {
+.landing-page-button:hover {
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    background-color: white;
+}
+
+.glyphicon-menu-down {
+    margin-top: 70px;
+}
+
+#index-page {
+    margin-top: 50px;
+    text-align: center;
     color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#index-page h2 {
+    color: #3FE0FF;
+    text-transform: uppercase;
+}
+
+.icons {
+    color: #000000;
+}
+
+.icon1:hover,
+.icon2:hover,
+.icon3:hover {
+    h3 {
+        visibility: visible;
+    }
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.icons h3 {
+    visibility: hidden;
+}
+
+.glyphicon-search,
+.glyphicon-pencil,
+.glyphicon-education {
+    font-size: 130px;
+}
+
+.glyphicon-search:hover,
+.glyphicon-pencil:hover,
+.glyphicon-education:hover {
+    color: #3FE0FF;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 #about {
-    color: aqua;
+    color: #3FE0FF;
+    font-family: 'Arvo', serif;
 }
 
-#us {
-    color: aqua;
-    font-family: 'Open Sans Condensed', sans-serif;
+.team {
+    margin: 20px;
 }
 
-#agnes {
-    height: 17%;
-    width: 17%;
-    margin-left: 5%;
-    border-radius: 50%;
-}
-
-#kenn {
-    height: 20%;
-    width: 20%;
-    margin-left: 5%;
-    border-radius: 50%;
-}
-
-#tasha {
-    height: 20%;
-    width: 20%;
-    margin-left: 5%;
-    border-radius: 50%;
-}
-
+#agnes,
+#kenn,
+#tasha,
 #ruth {
-    height: 20%;
-    width: 20%;
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
     margin-left: 5%;
     border-radius: 50%;
+    image-rendering: auto;
+    filter: grayscale(0);
 }
 
-.carousel-inner > .item > img {
-     width: 1390px;
-     height: 800px;
+#agnes:hover,
+#kenn:hover,
+#tasha:hover,
+#ruth:hover {
+    filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
 }
-
-
 
 .icons {
     column-count: 3;
@@ -115,99 +154,12 @@ hr {
     padding-bottom: 50px;
 }
 
-.icon1, .icon2, .icon3 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-align: center;
-        
+h1 {
+    //font-family: 'Source Sans Pro', sans-serif;
+    //font-family: 'Montserrat', sans-serif;
+    font-family: 'Arvo', serif;
+    //font-family: 'Rubik', sans-serif;
+    color: yellow;
 }
 
-* {
-   margin: 0;
-   padding: 0;
-}
-
-body {
-   font-family: serif;
-}
-
-.row {
-   max-width: 103%;
-   margin: 6px;
-}
-
-#logo {
-   width: 10%;
-   margin-left: 40px;
-   margin-top: -90px;
-}
-header {
-   background-image:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5));
-   background-image: url(landingpage3.jpg);
-   background-size: cover;
-   background-position: center;
-   background-attachment: fixed;
-   height: 100vh;
-}
-
-.landingHeader {
-   width: 1000px;
-   color: whitesmoke;
-   position: absolute;
-   top: 15%;
-   left: 9%;
-}
-
-.landingHeader h1 {
-   text-align: center;
-   padding: 5px;
-   line-height: 50px;
-   font-size: 50px;
-   font-weight: bold;
-   margin-bottom: 40%;
-}
-
-.mainNav {
-   list-style: none;
-   float: right;
-   margin-top: -100px;
-   margin-right: 20px;
-}
-
-.mainNav li{
-   display: inline-block;
-   font-size: 15px;
-   padding: 20px;
-   margin-left: 30px;
-}
-
-.mainNav li a {
-   color: whitesmoke;
-   text-decoration: none;
-   font-weight: bold;
-}
-
-.mainNav li a:hover {
-   color: aqua;
-   border-bottom: 2px solid aqua;
-   transition: all 0.5s ease-in;
-   padding: 10px 0;  
-}
-
-.btn {
-   border: 1px solid aqua;
-   padding: 20px;
-   margin-left: 45%;
-   text-decoration: none;
-   font-size: 33px;
-}
-.btn-site {
-   color: white;
-   background-color: aqua;
-}
-
-.btn-site:hover {
-   transition: all 0.5s ease-in;
-   background-color: white;
-   color: aqua;
-}
-
+@media only screen and (min-width: 1224px) {}

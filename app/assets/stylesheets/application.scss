@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+    background-color: #383D3B;
+    padding-top: 120px;
+    font-family: serif;
+}
+
+.content {
+    min-height: 523px;
+}
+
+
+/* navbar */
+
+.navbar-default {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    padding: 35px;
+    border: 0;
+}
+
+
+/* Title */
+
+.navbar-default .navbar-brand {
+    color: #3FE0FF;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.navbar-default .navbar-brand img {
+    position: absolute;
+    height: 80px;
+    width: 210px;
+    top: 20px;
+}
+
+
+/* Link */
+
+.navbar-default .navbar-nav > li >a {
+    color: #3FE0FF;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+    text-decoration: underline;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0);
+}
+
+
+/* Caret */
+
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+
+
+/* Mobile version */
+
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
+        float: right;
+        width: 70%;
+    }
+    .navbar-nav>li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+    }
+}
+
+.navbar-fixed-top.scrolled {
+    background: rgba(0, 0, 0, 1);
+    padding: 7px;
+    transition: all 500ms linear;
+}
+
+.navbar-brand .scrolled {
+    visibility: none !important;
+}
+
+#footer {
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    text-align: right;
+    font-weight: bold;
+}
+
+#footer h5 {
+    margin: 0;
+    padding: 7px;
+    margin-right: 20px;
+}
+
+label {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.forms h2 {
+    text-align: center;
+    color: #3FE0FF;
+}
+
+form {
+    margin: 35px;
+}

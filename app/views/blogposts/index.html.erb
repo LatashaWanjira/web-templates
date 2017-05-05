@@ -1,23 +1,24 @@
 <% content_for(:title, "Blog Posts | ReVamp") %>
 
 <div class="container">
-  <div class="blog_head">
+  <div class="blog-head">
     <h2>How - To Blogs</h2>
   </div>
   <hr>
-  <div class="blog_body">
-    <% if @blogposts.any? %>
-      <ul>
-        <% @blogposts.each do |blogpost| %>
-          <li><%= link_to blogpost.blog_title, blogpost_path(blogpost), class: "blogposts-header" %> <br>
-              <%= truncate(blogpost.body, :length => 100) %><%= link_to " Read more", blogpost_path(blogpost) %></li>
-          <hr>
+      <% if @blogposts.any? %>
+        <ul>
+          <div class="row">
+            <% @blogposts.each do |blogpost| %>
+            <div class="col-md-5 blog-body-truncated">
+              <li><%= link_to blogpost.blog_title, blogpost_path(blogpost), {class: "blog-title"} %> <br>
+                  <%= truncate(blogpost.body, :length => 100) %><%= link_to " Read more", blogpost_path(blogpost) %></li>
+              </div>
+            <% end %>
+            </div>
+          </ul> 
+        <% else %>
+          <center><p>No blog has been added yet</p></center>
         <% end %>
-      </ul>	
-    <% else %>
-      <center><p>No blog has been added yet</p></center>
-    <% end %>
-  </div>
   <% if user_signed_in? %>
     <%= link_to "Add A Blogpost", new_blogpost_path %>
   <% end %>

@@ -10,7 +10,7 @@
       <ul>
           <div class="row">
         <% @sites.each do |site|%>
-            <div class="col-md-3 site-index" style="background-image: linear-gradient(rgba(63, 224, 255, 0.3), rgba(63, 224, 255, 0.3)), url(<%= site.images[0] %>);
+            <div class="col-md-3 site-index" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= site.images[0] %>);
             background-size: cover;"> 
               <li><%= link_to site.site_name, site_path(site) %></li>     
             </div>
@@ -21,9 +21,13 @@
       <p>There are no sites yet!</p>
     <% end %>
   </div>
+          <% if user_signed_in? %>
+
   <%= link_to "Add New Site", new_site_path %>
+  <% end %>
   <hr>
   <div id='tag_cloud'>
+  <h2>Categories</h2>
     <% tag_cloud Site.tag_counts, %w{s m l} do |tag, css_class| %>
       <%= link_to tag.name, tag_path(tag.name), class: css_class %>
     <% end %>

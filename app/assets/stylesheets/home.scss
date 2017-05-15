@@ -122,31 +122,6 @@
     margin: 20px;
 }
 
-#agnes,
-#kenn,
-#tasha,
-#ruth {
-    height: auto;
-    width: auto;
-    max-width: 200px;
-    max-height: 200px;
-    margin-left: 5%;
-    border-radius: 50%;
-    image-rendering: auto;
-    filter: grayscale(0);
-}
-
-#agnes:hover,
-#kenn:hover,
-#tasha:hover,
-#ruth:hover {
-    filter: grayscale(100%);
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-}
-
 .icons {
     column-count: 3;
     background: white;
@@ -163,3 +138,46 @@ h1 {
 }
 
 @media only screen and (min-width: 1224px) {}
+
+
+/*Carousel styling*/
+
+#myCarousel p,
+#myCarousel h3 {
+    color: white;
+}
+
+#myCarousel {
+    margin-bottom: 50px;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#myCarousel .item img {
+    margin-left: 150px;
+    min-height: 250px;
+    max-height: 250px;
+    width: auto;
+}
+
+.carousel-caption {
+    margin-left: 35%;
+    width: 30%;
+    text-align: right;
+    text-shadow: none;
+    padding-bottom: 0;
+}
+
+a.carousel-control.left,
+a.carousel-control.right {
+    background: none;
+    color: #3FE0FF;
+}
+
+#myCarousel i {
+    text-align: center;
+}
+
+#myCarousel .item {
+    padding: 10px;
+}

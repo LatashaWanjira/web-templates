@@ -7,8 +7,9 @@
         </div>
         <hr>
         <p><%= @blogpost.body %></p>
-
+        <% if user_signed_in? %>
         <p><%= link_to "Edit Blog Post", edit_blogpost_path %> | <%= link_to "Delete Blog Post", blogpost_path(@blogpost), :data => { :confirm => "Are you sure you want to delete this Blog Post?", :method => "delete" } %></p>
+        <% end %>
     </div> 
     <div id="disqus_thread"></div>
     <script>
